@@ -3,7 +3,7 @@
 
 <head>
 <meta charset="UTF-8">
-<title>woaiguowei</title>
+<title>春天里的故事</title>
 
 <link rel="stylesheet" href="css/style.css">
 
@@ -49,13 +49,28 @@
     <img id="bigimg" style="border:5px solid #fff;" src="" />
   </div>
 
-
+<audio  preload autoplay loop id="lottery">
+     <source src="http://mp.333ttt.com/mp3music/8131628.mp3" type="audio/mpeg">
+</audio>
 
 
 <script type="text/javascript" src="js/script.js"></script>
 
 <script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript">
+
+    window.onload = function(){
+             setInterval("toggleSound()",100);
+        }
+ 
+    function toggleSound() {
+                var music = document.getElementById("lottery");//获取ID  
+                    
+                if (music.paused) { //判读是否播放  
+                    music.paused=false;
+                    music.play(); //没有就播放 
+                }    
+        }
 
  $(function(){ 
     $(".pic").click(function(){ 
